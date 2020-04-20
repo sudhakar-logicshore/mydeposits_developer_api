@@ -22,6 +22,7 @@ import APIResponsesBatchCheckout from '../model/APIResponsesBatchCheckout';
 import APIResponsesBatchDetails from '../model/APIResponsesBatchDetails';
 import APIResponsesBatchList from '../model/APIResponsesBatchList';
 import APIResponsesErrorList from '../model/APIResponsesErrorList';
+import AuthenticationServicesApi from './AuthenticationServicesApi';
 
 /**
 * BatchServices service.
@@ -40,7 +41,6 @@ export default class BatchServicesApi {
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
-
 
     /**
      * Callback function to receive the result of the batchAddTenancy operation.

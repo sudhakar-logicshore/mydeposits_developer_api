@@ -29,7 +29,14 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
-mydeposits_accessCode.accessToken = 'YOUR ACCESS TOKEN';
+let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
+  client_id:"xx",
+  client_secret:"xxx",
+  grant_type:"xxx",
+  username:"xxx",
+  password:"xxx"
+});
+mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.MemberAccountServicesApi();
 let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
@@ -80,7 +87,14 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
-mydeposits_accessCode.accessToken = 'YOUR ACCESS TOKEN';
+let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
+  client_id:"xx",
+  client_secret:"xxx",
+  grant_type:"xxx",
+  username:"xxx",
+  password:"xxx"
+});
+mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.MemberAccountServicesApi();
 let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
@@ -131,7 +145,14 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
-mydeposits_accessCode.accessToken = 'YOUR ACCESS TOKEN';
+let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
+  client_id:"xx",
+  client_secret:"xxx",
+  grant_type:"xxx",
+  username:"xxx",
+  password:"xxx"
+});
+mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.MemberAccountServicesApi();
 let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
@@ -182,7 +203,14 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
-mydeposits_accessCode.accessToken = 'YOUR ACCESS TOKEN';
+let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
+  client_id:"xx",
+  client_secret:"xxx",
+  grant_type:"xxx",
+  username:"xxx",
+  password:"xxx"
+});
+mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.MemberAccountServicesApi();
 let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
@@ -231,7 +259,14 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
-mydeposits_accessCode.accessToken = 'YOUR ACCESS TOKEN';
+let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
+  client_id:"xx",
+  client_secret:"xxx",
+  grant_type:"xxx",
+  username:"xxx",
+  password:"xxx"
+});
+mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.MemberAccountServicesApi();
 let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
@@ -284,7 +319,14 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
-mydeposits_accessCode.accessToken = 'YOUR ACCESS TOKEN';
+let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
+  client_id:"xx",
+  client_secret:"xxx",
+  grant_type:"xxx",
+  username:"xxx",
+  password:"xxx"
+});
+mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.MemberAccountServicesApi();
 let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
@@ -335,7 +377,14 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
-mydeposits_accessCode.accessToken = 'YOUR ACCESS TOKEN';
+let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
+  client_id:"xx",
+  client_secret:"xxx",
+  grant_type:"xxx",
+  username:"xxx",
+  password:"xxx"
+});
+mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.MemberAccountServicesApi();
 let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
@@ -386,7 +435,14 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
-mydeposits_accessCode.accessToken = 'YOUR ACCESS TOKEN';
+let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
+  client_id:"xx",
+  client_secret:"xxx",
+  grant_type:"xxx",
+  username:"xxx",
+  password:"xxx"
+});
+mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.MemberAccountServicesApi();
 let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
@@ -435,7 +491,14 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
-mydeposits_accessCode.accessToken = 'YOUR ACCESS TOKEN';
+let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
+  client_id:"xx",
+  client_secret:"xxx",
+  grant_type:"xxx",
+  username:"xxx",
+  password:"xxx"
+});
+mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.MemberAccountServicesApi();
 let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.

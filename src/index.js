@@ -80,7 +80,22 @@ import MemberAccountServicesApi from './api/MemberAccountServicesApi';
 import PropertyServicesApi from './api/PropertyServicesApi';
 import TenancyServicesApi from './api/TenancyServicesApi';
 
-
+function getAccessToken(scheme, region, data){
+    return new Promise((response, reject) => { 
+        var api = new AuthenticationServicesApi()
+        var callback = function(error, data, response) {
+            if (error) {
+                console.error(error);
+                reject(error)
+            } else {
+                console.log('API called successfully. Returned data: ', data, response);
+                resolve(data)
+            }
+        };
+        
+        api.tokenCreate(scheme, region, data, callback);
+    });
+}
 /**
 * API_services_to_automate_Deposit_Protection_within_your_existing_Property_Management_Software_workflows_and_applications_for_both_England__Wales_and_also_Scotland.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
@@ -513,5 +528,10 @@ export {
     * The TenancyServicesApi service constructor.
     * @property {module:api/TenancyServicesApi}
     */
-    TenancyServicesApi
+    TenancyServicesApi,
+
+    /**
+    * Get Access token methos.
+    */
+    getAccessToken
 };
