@@ -23,6 +23,9 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
+
+let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
+let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
   client_id:"xx",
   client_secret:"xxx",
@@ -33,8 +36,6 @@ let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
 mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.PropertyServicesApi();
-let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
-let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let id = 789; // Number | Property ID
 apiInstance.propertyGet(scheme, region, id, (error, data, response) => {
   if (error) {
@@ -83,6 +84,9 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
+
+let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
+let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
   client_id:"xx",
   client_secret:"xxx",
@@ -93,8 +97,6 @@ let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
 mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.PropertyServicesApi();
-let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
-let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let body = new MydepositsDeveloperApi.APIModelsProperty(); // APIModelsProperty | Property entity to be created
 apiInstance.propertyPost(scheme, region, body, (error, data, response) => {
   if (error) {
@@ -141,6 +143,9 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
+
+let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
+let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
   client_id:"xx",
   client_secret:"xxx",
@@ -151,8 +156,6 @@ let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
 mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.PropertyServicesApi();
-let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
-let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let id = 789; // Number | Property ID
 let value = new MydepositsDeveloperApi.APIModelsProperty(); // APIModelsProperty | Models.Property
 apiInstance.propertyPut(scheme, region, id, value, (error, data, response) => {

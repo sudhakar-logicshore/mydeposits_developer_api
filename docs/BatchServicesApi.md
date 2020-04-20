@@ -25,6 +25,9 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
+
+let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
+let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
   client_id:"xx",
   client_secret:"xxx",
@@ -35,8 +38,6 @@ let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
 mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.BatchServicesApi();
-let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
-let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let id = 789; // Number | ID of the Batch resource
 let value = new MydepositsDeveloperApi.APIModelsBatchAddTenancy(); // APIModelsBatchAddTenancy | 
 apiInstance.batchAddTenancy(scheme, region, id, value, (error, data, response) => {
@@ -85,6 +86,9 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
+
+let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
+let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
   client_id:"xx",
   client_secret:"xxx",
@@ -95,8 +99,6 @@ let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
 mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.BatchServicesApi();
-let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
-let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let id = 789; // Number | ID of the Batch resource
 let value = new MydepositsDeveloperApi.APIModelsCheckout(); // APIModelsCheckout | 
 apiInstance.batchCheckout(scheme, region, id, value, (error, data, response) => {
@@ -145,6 +147,9 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
+
+let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
+let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
   client_id:"xx",
   client_secret:"xxx",
@@ -155,8 +160,6 @@ let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
 mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.BatchServicesApi();
-let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
-let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let id = 789; // Number | ID of the Batch resource
 apiInstance.batchGet(scheme, region, id, (error, data, response) => {
   if (error) {
@@ -203,6 +206,9 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
+
+let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
+let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
   client_id:"xx",
   client_secret:"xxx",
@@ -213,8 +219,6 @@ let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
 mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.BatchServicesApi();
-let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
-let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 apiInstance.batchGetList(scheme, region, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -261,6 +265,9 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: mydeposits_accessCode
 let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
+
+let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
+let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
   client_id:"xx",
   client_secret:"xxx",
@@ -271,8 +278,6 @@ let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
 mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.BatchServicesApi();
-let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
-let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
 let body = new MydepositsDeveloperApi.APIModelsBatch(); // APIModelsBatch | The batch object that needs to be added to the member's account
 apiInstance.batchPost(scheme, region, body, (error, data, response) => {
   if (error) {

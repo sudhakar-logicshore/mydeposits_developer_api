@@ -68,6 +68,7 @@ import MydepositsDeveloperApi from 'mydeposits_developer_api';
 let apiInstance = new MydepositsDeveloperApi.AuthenticationServicesApi();
 let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
 let region = "region_example"; // String | ID of the selected deposit protection Region as returned by protectionregions method.
+
 let value = new MydepositsDeveloperApi.APIModelsToken(); // APIModelsToken | 
 apiInstance.tokenCreate(scheme, region, value, (error, data, response) => {
   if (error) {

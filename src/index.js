@@ -81,14 +81,12 @@ import PropertyServicesApi from './api/PropertyServicesApi';
 import TenancyServicesApi from './api/TenancyServicesApi';
 
 function getAccessToken(scheme, region, data){
-    return new Promise((response, reject) => { 
+    return new Promise((resolve, reject) => { 
         var api = new AuthenticationServicesApi()
         var callback = function(error, data, response) {
             if (error) {
-                console.error(error);
                 reject(error)
             } else {
-                console.log('API called successfully. Returned data: ', data, response);
                 resolve(data)
             }
         };
