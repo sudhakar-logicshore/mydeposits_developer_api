@@ -1,6 +1,6 @@
 {
   "name": "mydeposits_developer_api",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "API_services_to_automate_Deposit_Protection_within_your_existing_Property_Management_Software_workflows_and_applications_for_both_England__Wales_and_also_Scotland",
   "license": "Unlicense",
   "main": "dist/index.js",
