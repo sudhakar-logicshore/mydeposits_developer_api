@@ -19,17 +19,6 @@ Request authorisation for a given member
 
 ```javascript
 import MydepositsDeveloperApi from 'mydeposits_developer_api';
-let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
-// Configure OAuth2 access token for authorization: mydeposits_accessCode
-let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
-let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
-  client_id:"xx",
-  client_secret:"xxx",
-  grant_type:"xxx",
-  username:"xxx",
-  password:"xxx"
-});
-mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.AuthenticationServicesApi();
 let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.
@@ -75,17 +64,6 @@ Request a token for a given member
 
 ```javascript
 import MydepositsDeveloperApi from 'mydeposits_developer_api';
-let defaultClient = MydepositsDeveloperApi.ApiClient.instance;
-// Configure OAuth2 access token for authorization: mydeposits_accessCode
-let mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
-let token = await MydepositsDeveloperApi.getAccessToken(scheme,region,{
-  client_id:"xx",
-  client_secret:"xxx",
-  grant_type:"xxx",
-  username:"xxx",
-  password:"xxx"
-});
-mydeposits_accessCode.accessToken = token.access_token;
 
 let apiInstance = new MydepositsDeveloperApi.AuthenticationServicesApi();
 let scheme = "scheme_example"; // String | ID of the selected deposit protection Scheme as returned by protectionschemes method.

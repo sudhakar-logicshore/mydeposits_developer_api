@@ -326,7 +326,7 @@ var ApiClient = /*#__PURE__*/function () {
               request.set({
                 'Authorization': 'Bearer ' + auth.accessToken
               });
-            }
+            } else {}
 
             break;
 
@@ -525,6 +525,31 @@ var ApiClient = /*#__PURE__*/function () {
         }
       });
       return request;
+    }
+    /**
+    * Invokes the REST service using the supplied settings and parameters.
+    * @param {String} path The base URL to invoke.
+    * @param {String} httpMethod The HTTP method to use.
+    * @param {Object.<String, String>} pathParams A map of path parameters and their values.
+    * @param {Object.<String, Object>} queryParams A map of query parameters and their values.
+    * @param {Object.<String, Object>} headerParams A map of header parameters and their values.
+    * @param {Object.<String, Object>} formParams A map of form parameters and their values.
+    * @param {Object} bodyParam The value to pass as the request body.
+    * @param {Array.<String>} authNames An array of authentication type names.
+    * @param {Array.<String>} contentTypes An array of request MIME types.
+    * @param {Array.<String>} accepts An array of acceptable response MIME types.
+    * @param {(String|Array|ObjectFunction)} returnType The required type to return; can be a string for simple types or the
+    * constructor for a complex type.
+    * @param {String} apiBasePath base path defined in the operation/path level to override the default one
+    * @param {module:ApiClient~callApiCallback} callback The callback function.
+    * @returns {Object} The SuperAgent request object.
+    */
+
+  }, {
+    key: "callApiWithAccessCode",
+    value: function callApiWithAccessCode(path, httpMethod, pathParams, queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts, returnType, apiBasePath, callback) {
+      this.authentications["mydeposits_accessCode"] = '';
+      this.callApi(path, httpMethod, pathParams, queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts, returnType, apiBasePath, callback);
     }
     /**
     * Parses an ISO-8601 string representation of a date value.

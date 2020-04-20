@@ -100,11 +100,6 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```javascript
 var MydepositsDeveloperApi = require('mydeposits_developer_api');
 
-var defaultClient = MydepositsDeveloperApi.ApiClient.instance;
-// Configure OAuth2 access token for authorization: mydeposits_accessCode
-var mydeposits_accessCode = defaultClient.authentications['mydeposits_accessCode'];
-mydeposits_accessCode.accessToken = "YOUR ACCESS TOKEN"
-
 var api = new MydepositsDeveloperApi.AuthenticationServicesApi()
 var scheme = "scheme_example"; // {String} ID of the selected deposit protection Scheme as returned by protectionschemes method.
 var region = "region_example"; // {String} ID of the selected deposit protection Region as returned by protectionregions method.
@@ -125,104 +120,104 @@ All URIs are relative to *https://api.sandbox.mydeposits.co.uk*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*MydepositsDeveloperApi.AuthenticationServicesApi* | [**authorisationCreate**](docs/AuthenticationServicesApi.md#authorisationCreate) | **GET** /v1/{scheme}/{region}/authorize | Request authorisation for a given member
-*MydepositsDeveloperApi.AuthenticationServicesApi* | [**tokenCreate**](docs/AuthenticationServicesApi.md#tokenCreate) | **POST** /v1/{scheme}/{region}/token | Request a token for a given member
-*MydepositsDeveloperApi.BatchServicesApi* | [**batchAddTenancy**](docs/BatchServicesApi.md#batchAddTenancy) | **POST** /v1/{scheme}/{region}/batch/{id}/tenancy | Add a tenancy deposit protection to an existing batch
-*MydepositsDeveloperApi.BatchServicesApi* | [**batchCheckout**](docs/BatchServicesApi.md#batchCheckout) | **POST** /v1/{scheme}/{region}/batch/{id}/checkout | Checkout a batch containing tenancy deposit protections
-*MydepositsDeveloperApi.BatchServicesApi* | [**batchGet**](docs/BatchServicesApi.md#batchGet) | **GET** /v1/{scheme}/{region}/batch/{id} | Retrieve batch entity details for a batch under a specified mydeposits member account
-*MydepositsDeveloperApi.BatchServicesApi* | [**batchGetList**](docs/BatchServicesApi.md#batchGetList) | **GET** /v1/{scheme}/{region}/batches | Retrieve a list of all batches underneath an account
-*MydepositsDeveloperApi.BatchServicesApi* | [**batchPost**](docs/BatchServicesApi.md#batchPost) | **POST** /v1/{scheme}/{region}/batch | Create new batch entity within a specified mydeposits Custodial account
-*MydepositsDeveloperApi.GlobalServicesApi* | [**protectionRegionsGet**](docs/GlobalServicesApi.md#protectionRegionsGet) | **GET** /v1/protectionregions | List of regions served by mydeposits
-*MydepositsDeveloperApi.GlobalServicesApi* | [**protectionSchemesGet**](docs/GlobalServicesApi.md#protectionSchemesGet) | **GET** /v1/{region}/protectionschemes | List of available Deposit Protection Schemes within this region
-*MydepositsDeveloperApi.GlobalServicesApi* | [**schemeRulesGet**](docs/GlobalServicesApi.md#schemeRulesGet) | **GET** /v1/{scheme}/{region}/schemerules | Returns a link to the Scheme Rules for this scheme and region
-*MydepositsDeveloperApi.LandlordServicesApi* | [**landlordGet**](docs/LandlordServicesApi.md#landlordGet) | **GET** /v1/{scheme}/{region}/landlord/{id} | Retrieve landlord entity details for a landlord under a specified mydeposits member account
-*MydepositsDeveloperApi.LandlordServicesApi* | [**landlordPost**](docs/LandlordServicesApi.md#landlordPost) | **POST** /v1/{scheme}/{region}/landlord | Create new landlord entity within a specified mydeposits member account
-*MydepositsDeveloperApi.LandlordServicesApi* | [**landlordPut**](docs/LandlordServicesApi.md#landlordPut) | **PUT** /v1/{scheme}/{region}/landlord/{id} | Update a landlord entity within a specified mydeposits member account
-*MydepositsDeveloperApi.MemberAccountServicesApi* | [**addMember**](docs/MemberAccountServicesApi.md#addMember) | **POST** /v1/{scheme}/{region}/member | Create a new member account record
-*MydepositsDeveloperApi.MemberAccountServicesApi* | [**memberBranchCreate**](docs/MemberAccountServicesApi.md#memberBranchCreate) | **POST** /v1/{scheme}/{region}/member/branch | Create a new branch under a corporate landlord or agent member&#39;s account record
-*MydepositsDeveloperApi.MemberAccountServicesApi* | [**memberBranchGet**](docs/MemberAccountServicesApi.md#memberBranchGet) | **GET** /v1/{scheme}/{region}/member/branch/{id} | Request details for a given branch under the member&#39;s account
-*MydepositsDeveloperApi.MemberAccountServicesApi* | [**memberBranchList**](docs/MemberAccountServicesApi.md#memberBranchList) | **GET** /v1/{scheme}/{region}/member/branches | Request all branches for a given corporate landlord or agent member
-*MydepositsDeveloperApi.MemberAccountServicesApi* | [**memberBranchPut**](docs/MemberAccountServicesApi.md#memberBranchPut) | **PUT** /v1/{scheme}/{region}/member/branch/{id} | Update an existing branch
-*MydepositsDeveloperApi.MemberAccountServicesApi* | [**memberPaymentDetailsCreate**](docs/MemberAccountServicesApi.md#memberPaymentDetailsCreate) | **POST** /v1/{scheme}/{region}/member/account/payment/detail | Custodial only - Add repayment details under a member account record
-*MydepositsDeveloperApi.MemberAccountServicesApi* | [**memberPaymentDetailsDefault**](docs/MemberAccountServicesApi.md#memberPaymentDetailsDefault) | **POST** /v1/{scheme}/{region}/member/account/payment/{id}/default | Custodial only - Set the default repayment details for the member&#39;s account
-*MydepositsDeveloperApi.MemberAccountServicesApi* | [**memberPaymentDetailsGet**](docs/MemberAccountServicesApi.md#memberPaymentDetailsGet) | **GET** /v1/{scheme}/{region}/member/account/payment/details | Custodial only - Request all stored UK repayment details for a given member
-*MydepositsDeveloperApi.MemberAccountServicesApi* | [**subscribeMember**](docs/MemberAccountServicesApi.md#subscribeMember) | **POST** /v1/{scheme}/{region}/member/subscribe | Subscribe a member to the specified scheme
-*MydepositsDeveloperApi.PropertyServicesApi* | [**propertyGet**](docs/PropertyServicesApi.md#propertyGet) | **GET** /v1/{scheme}/{region}/property/{id} | Return all information for this property
-*MydepositsDeveloperApi.PropertyServicesApi* | [**propertyPost**](docs/PropertyServicesApi.md#propertyPost) | **POST** /v1/{scheme}/{region}/property | Create a new property record within a specified mydeposits member account
-*MydepositsDeveloperApi.PropertyServicesApi* | [**propertyPut**](docs/PropertyServicesApi.md#propertyPut) | **PUT** /v1/{scheme}/{region}/property/{id} | Update an existing property
-*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyCertificate**](docs/TenancyServicesApi.md#tenancyCertificate) | **GET** /v1/{scheme}/{region}/tenancy/{id}/depositprotection | Retrieve deposit protection PDF
-*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyCheckout**](docs/TenancyServicesApi.md#tenancyCheckout) | **POST** /v1/{scheme}/{region}/tenancy/{id}/checkout | Checkout a tenancy deposit protection
-*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyGet**](docs/TenancyServicesApi.md#tenancyGet) | **GET** /v1/{scheme}/{region}/tenancy/{id} | Retrieve details of a tenancy
-*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyGetList**](docs/TenancyServicesApi.md#tenancyGetList) | **GET** /v1/{scheme}/{region}/tenancies | Retrieve a list of all tenancies underneath an account
-*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyPost**](docs/TenancyServicesApi.md#tenancyPost) | **POST** /v1/{scheme}/{region}/tenancy | Create new tenancy record within a specified mydeposits member account
-*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyUnprotect**](docs/TenancyServicesApi.md#tenancyUnprotect) | **POST** /v1/{scheme}/{region}/tenancy/{id}/unprotect | Submit a request to initiate a deposit release
-*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyUnprotectAccept**](docs/TenancyServicesApi.md#tenancyUnprotectAccept) | **POST** /v1/{scheme}/{region}/tenancy/{id}/unprotect/accept | Custodial only - Accept a tenant&#39;s deposit release request
-*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyUnprotectCounter**](docs/TenancyServicesApi.md#tenancyUnprotectCounter) | **POST** /v1/{scheme}/{region}/tenancy/{id}/unprotect/counter | Custodial only - Submit a counter offer to a tenant&#39;s release request
-*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyUnprotectOTP**](docs/TenancyServicesApi.md#tenancyUnprotectOTP) | **POST** /v1/{scheme}/{region}/tenancy/{id}/otp | Request a One Time Password to initiate or respond to a release
-*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyUnprotectSPT**](docs/TenancyServicesApi.md#tenancyUnprotectSPT) | **POST** /v1/{scheme}/{region}/tenancy/{id}/convertspt | Insurance only - Convert a live protection to a statutory periodic tenancy
+*MydepositsDeveloperApi.AuthenticationServicesApi* | [**authorisationCreate**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/AuthenticationServicesApi.md#authorisationCreate) | **GET** /v1/{scheme}/{region}/authorize | Request authorisation for a given member
+*MydepositsDeveloperApi.AuthenticationServicesApi* | [**tokenCreate**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/AuthenticationServicesApi.md#tokenCreate) | **POST** /v1/{scheme}/{region}/token | Request a token for a given member
+*MydepositsDeveloperApi.BatchServicesApi* | [**batchAddTenancy**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/BatchServicesApi.md#batchAddTenancy) | **POST** /v1/{scheme}/{region}/batch/{id}/tenancy | Add a tenancy deposit protection to an existing batch
+*MydepositsDeveloperApi.BatchServicesApi* | [**batchCheckout**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/BatchServicesApi.md#batchCheckout) | **POST** /v1/{scheme}/{region}/batch/{id}/checkout | Checkout a batch containing tenancy deposit protections
+*MydepositsDeveloperApi.BatchServicesApi* | [**batchGet**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/BatchServicesApi.md#batchGet) | **GET** /v1/{scheme}/{region}/batch/{id} | Retrieve batch entity details for a batch under a specified mydeposits member account
+*MydepositsDeveloperApi.BatchServicesApi* | [**batchGetList**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/BatchServicesApi.md#batchGetList) | **GET** /v1/{scheme}/{region}/batches | Retrieve a list of all batches underneath an account
+*MydepositsDeveloperApi.BatchServicesApi* | [**batchPost**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/BatchServicesApi.md#batchPost) | **POST** /v1/{scheme}/{region}/batch | Create new batch entity within a specified mydeposits Custodial account
+*MydepositsDeveloperApi.GlobalServicesApi* | [**protectionRegionsGet**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/GlobalServicesApi.md#protectionRegionsGet) | **GET** /v1/protectionregions | List of regions served by mydeposits
+*MydepositsDeveloperApi.GlobalServicesApi* | [**protectionSchemesGet**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/GlobalServicesApi.md#protectionSchemesGet) | **GET** /v1/{region}/protectionschemes | List of available Deposit Protection Schemes within this region
+*MydepositsDeveloperApi.GlobalServicesApi* | [**schemeRulesGet**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/GlobalServicesApi.md#schemeRulesGet) | **GET** /v1/{scheme}/{region}/schemerules | Returns a link to the Scheme Rules for this scheme and region
+*MydepositsDeveloperApi.LandlordServicesApi* | [**landlordGet**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/LandlordServicesApi.md#landlordGet) | **GET** /v1/{scheme}/{region}/landlord/{id} | Retrieve landlord entity details for a landlord under a specified mydeposits member account
+*MydepositsDeveloperApi.LandlordServicesApi* | [**landlordPost**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/LandlordServicesApi.md#landlordPost) | **POST** /v1/{scheme}/{region}/landlord | Create new landlord entity within a specified mydeposits member account
+*MydepositsDeveloperApi.LandlordServicesApi* | [**landlordPut**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/LandlordServicesApi.md#landlordPut) | **PUT** /v1/{scheme}/{region}/landlord/{id} | Update a landlord entity within a specified mydeposits member account
+*MydepositsDeveloperApi.MemberAccountServicesApi* | [**addMember**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/MemberAccountServicesApi.md#addMember) | **POST** /v1/{scheme}/{region}/member | Create a new member account record
+*MydepositsDeveloperApi.MemberAccountServicesApi* | [**memberBranchCreate**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/MemberAccountServicesApi.md#memberBranchCreate) | **POST** /v1/{scheme}/{region}/member/branch | Create a new branch under a corporate landlord or agent member&#39;s account record
+*MydepositsDeveloperApi.MemberAccountServicesApi* | [**memberBranchGet**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/MemberAccountServicesApi.md#memberBranchGet) | **GET** /v1/{scheme}/{region}/member/branch/{id} | Request details for a given branch under the member&#39;s account
+*MydepositsDeveloperApi.MemberAccountServicesApi* | [**memberBranchList**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/MemberAccountServicesApi.md#memberBranchList) | **GET** /v1/{scheme}/{region}/member/branches | Request all branches for a given corporate landlord or agent member
+*MydepositsDeveloperApi.MemberAccountServicesApi* | [**memberBranchPut**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/MemberAccountServicesApi.md#memberBranchPut) | **PUT** /v1/{scheme}/{region}/member/branch/{id} | Update an existing branch
+*MydepositsDeveloperApi.MemberAccountServicesApi* | [**memberPaymentDetailsCreate**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/MemberAccountServicesApi.md#memberPaymentDetailsCreate) | **POST** /v1/{scheme}/{region}/member/account/payment/detail | Custodial only - Add repayment details under a member account record
+*MydepositsDeveloperApi.MemberAccountServicesApi* | [**memberPaymentDetailsDefault**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/MemberAccountServicesApi.md#memberPaymentDetailsDefault) | **POST** /v1/{scheme}/{region}/member/account/payment/{id}/default | Custodial only - Set the default repayment details for the member&#39;s account
+*MydepositsDeveloperApi.MemberAccountServicesApi* | [**memberPaymentDetailsGet**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/MemberAccountServicesApi.md#memberPaymentDetailsGet) | **GET** /v1/{scheme}/{region}/member/account/payment/details | Custodial only - Request all stored UK repayment details for a given member
+*MydepositsDeveloperApi.MemberAccountServicesApi* | [**subscribeMember**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/MemberAccountServicesApi.md#subscribeMember) | **POST** /v1/{scheme}/{region}/member/subscribe | Subscribe a member to the specified scheme
+*MydepositsDeveloperApi.PropertyServicesApi* | [**propertyGet**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/PropertyServicesApi.md#propertyGet) | **GET** /v1/{scheme}/{region}/property/{id} | Return all information for this property
+*MydepositsDeveloperApi.PropertyServicesApi* | [**propertyPost**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/PropertyServicesApi.md#propertyPost) | **POST** /v1/{scheme}/{region}/property | Create a new property record within a specified mydeposits member account
+*MydepositsDeveloperApi.PropertyServicesApi* | [**propertyPut**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/PropertyServicesApi.md#propertyPut) | **PUT** /v1/{scheme}/{region}/property/{id} | Update an existing property
+*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyCertificate**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/TenancyServicesApi.md#tenancyCertificate) | **GET** /v1/{scheme}/{region}/tenancy/{id}/depositprotection | Retrieve deposit protection PDF
+*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyCheckout**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/TenancyServicesApi.md#tenancyCheckout) | **POST** /v1/{scheme}/{region}/tenancy/{id}/checkout | Checkout a tenancy deposit protection
+*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyGet**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/TenancyServicesApi.md#tenancyGet) | **GET** /v1/{scheme}/{region}/tenancy/{id} | Retrieve details of a tenancy
+*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyGetList**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/TenancyServicesApi.md#tenancyGetList) | **GET** /v1/{scheme}/{region}/tenancies | Retrieve a list of all tenancies underneath an account
+*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyPost**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/TenancyServicesApi.md#tenancyPost) | **POST** /v1/{scheme}/{region}/tenancy | Create new tenancy record within a specified mydeposits member account
+*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyUnprotect**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/TenancyServicesApi.md#tenancyUnprotect) | **POST** /v1/{scheme}/{region}/tenancy/{id}/unprotect | Submit a request to initiate a deposit release
+*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyUnprotectAccept**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/TenancyServicesApi.md#tenancyUnprotectAccept) | **POST** /v1/{scheme}/{region}/tenancy/{id}/unprotect/accept | Custodial only - Accept a tenant&#39;s deposit release request
+*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyUnprotectCounter**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/TenancyServicesApi.md#tenancyUnprotectCounter) | **POST** /v1/{scheme}/{region}/tenancy/{id}/unprotect/counter | Custodial only - Submit a counter offer to a tenant&#39;s release request
+*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyUnprotectOTP**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/TenancyServicesApi.md#tenancyUnprotectOTP) | **POST** /v1/{scheme}/{region}/tenancy/{id}/otp | Request a One Time Password to initiate or respond to a release
+*MydepositsDeveloperApi.TenancyServicesApi* | [**tenancyUnprotectSPT**](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/TenancyServicesApi.md#tenancyUnprotectSPT) | **POST** /v1/{scheme}/{region}/tenancy/{id}/convertspt | Insurance only - Convert a live protection to a statutory periodic tenancy
 
 
 ## Documentation for Models
 
- - [MydepositsDeveloperApi.APIModelsBatch](docs/APIModelsBatch.md)
- - [MydepositsDeveloperApi.APIModelsBatchAddTenancy](docs/APIModelsBatchAddTenancy.md)
- - [MydepositsDeveloperApi.APIModelsBranch](docs/APIModelsBranch.md)
- - [MydepositsDeveloperApi.APIModelsCheckout](docs/APIModelsCheckout.md)
- - [MydepositsDeveloperApi.APIModelsDeductions](docs/APIModelsDeductions.md)
- - [MydepositsDeveloperApi.APIModelsInterestedParty](docs/APIModelsInterestedParty.md)
- - [MydepositsDeveloperApi.APIModelsJointTenant](docs/APIModelsJointTenant.md)
- - [MydepositsDeveloperApi.APIModelsLandlord](docs/APIModelsLandlord.md)
- - [MydepositsDeveloperApi.APIModelsLandlordMember](docs/APIModelsLandlordMember.md)
- - [MydepositsDeveloperApi.APIModelsPaymentDetail](docs/APIModelsPaymentDetail.md)
- - [MydepositsDeveloperApi.APIModelsProperty](docs/APIModelsProperty.md)
- - [MydepositsDeveloperApi.APIModelsSubscribe](docs/APIModelsSubscribe.md)
- - [MydepositsDeveloperApi.APIModelsTenancy](docs/APIModelsTenancy.md)
- - [MydepositsDeveloperApi.APIModelsTenant](docs/APIModelsTenant.md)
- - [MydepositsDeveloperApi.APIModelsToken](docs/APIModelsToken.md)
- - [MydepositsDeveloperApi.APIModelsUnprotect](docs/APIModelsUnprotect.md)
- - [MydepositsDeveloperApi.APIModelsUnprotectAccept](docs/APIModelsUnprotectAccept.md)
- - [MydepositsDeveloperApi.APIModelsUnprotectionDeductions](docs/APIModelsUnprotectionDeductions.md)
- - [MydepositsDeveloperApi.APIResponsesBatch](docs/APIResponsesBatch.md)
- - [MydepositsDeveloperApi.APIResponsesBatchAddTenancy](docs/APIResponsesBatchAddTenancy.md)
- - [MydepositsDeveloperApi.APIResponsesBatchCheckout](docs/APIResponsesBatchCheckout.md)
- - [MydepositsDeveloperApi.APIResponsesBatchDetails](docs/APIResponsesBatchDetails.md)
- - [MydepositsDeveloperApi.APIResponsesBatchList](docs/APIResponsesBatchList.md)
- - [MydepositsDeveloperApi.APIResponsesBatchTenancy](docs/APIResponsesBatchTenancy.md)
- - [MydepositsDeveloperApi.APIResponsesBranch](docs/APIResponsesBranch.md)
- - [MydepositsDeveloperApi.APIResponsesBranchDetails](docs/APIResponsesBranchDetails.md)
- - [MydepositsDeveloperApi.APIResponsesBranchList](docs/APIResponsesBranchList.md)
- - [MydepositsDeveloperApi.APIResponsesCheckout](docs/APIResponsesCheckout.md)
- - [MydepositsDeveloperApi.APIResponsesConvertSPT](docs/APIResponsesConvertSPT.md)
- - [MydepositsDeveloperApi.APIResponsesDefaultPayment](docs/APIResponsesDefaultPayment.md)
- - [MydepositsDeveloperApi.APIResponsesErrorList](docs/APIResponsesErrorList.md)
- - [MydepositsDeveloperApi.APIResponsesErrors](docs/APIResponsesErrors.md)
- - [MydepositsDeveloperApi.APIResponsesInterestedPartyDetails](docs/APIResponsesInterestedPartyDetails.md)
- - [MydepositsDeveloperApi.APIResponsesJointTenant](docs/APIResponsesJointTenant.md)
- - [MydepositsDeveloperApi.APIResponsesLandlord](docs/APIResponsesLandlord.md)
- - [MydepositsDeveloperApi.APIResponsesLandlordDetails](docs/APIResponsesLandlordDetails.md)
- - [MydepositsDeveloperApi.APIResponsesLandlordMember](docs/APIResponsesLandlordMember.md)
- - [MydepositsDeveloperApi.APIResponsesLeadTenant](docs/APIResponsesLeadTenant.md)
- - [MydepositsDeveloperApi.APIResponsesOTP](docs/APIResponsesOTP.md)
- - [MydepositsDeveloperApi.APIResponsesPaymentDetail](docs/APIResponsesPaymentDetail.md)
- - [MydepositsDeveloperApi.APIResponsesPaymentDetails](docs/APIResponsesPaymentDetails.md)
- - [MydepositsDeveloperApi.APIResponsesPaymentDetailsList](docs/APIResponsesPaymentDetailsList.md)
- - [MydepositsDeveloperApi.APIResponsesProperty](docs/APIResponsesProperty.md)
- - [MydepositsDeveloperApi.APIResponsesPropertyDetails](docs/APIResponsesPropertyDetails.md)
- - [MydepositsDeveloperApi.APIResponsesProtection](docs/APIResponsesProtection.md)
- - [MydepositsDeveloperApi.APIResponsesProtectionList](docs/APIResponsesProtectionList.md)
- - [MydepositsDeveloperApi.APIResponsesSchemeRules](docs/APIResponsesSchemeRules.md)
- - [MydepositsDeveloperApi.APIResponsesTenancy](docs/APIResponsesTenancy.md)
- - [MydepositsDeveloperApi.APIResponsesTenancyDetails](docs/APIResponsesTenancyDetails.md)
- - [MydepositsDeveloperApi.APIResponsesToken](docs/APIResponsesToken.md)
- - [MydepositsDeveloperApi.APIResponsesUnprotect](docs/APIResponsesUnprotect.md)
- - [MydepositsDeveloperApi.Country](docs/Country.md)
- - [MydepositsDeveloperApi.DeductionReasons](docs/DeductionReasons.md)
- - [MydepositsDeveloperApi.InlineResponse200](docs/InlineResponse200.md)
- - [MydepositsDeveloperApi.LocalAuthorityRegion](docs/LocalAuthorityRegion.md)
- - [MydepositsDeveloperApi.PropertyType](docs/PropertyType.md)
- - [MydepositsDeveloperApi.TenancyStatus](docs/TenancyStatus.md)
- - [MydepositsDeveloperApi.TenancyType](docs/TenancyType.md)
- - [MydepositsDeveloperApi.Title](docs/Title.md)
+ - [MydepositsDeveloperApi.APIModelsBatch](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsBatch.md)
+ - [MydepositsDeveloperApi.APIModelsBatchAddTenancy](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsBatchAddTenancy.md)
+ - [MydepositsDeveloperApi.APIModelsBranch](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsBranch.md)
+ - [MydepositsDeveloperApi.APIModelsCheckout](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsCheckout.md)
+ - [MydepositsDeveloperApi.APIModelsDeductions](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsDeductions.md)
+ - [MydepositsDeveloperApi.APIModelsInterestedParty](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsInterestedParty.md)
+ - [MydepositsDeveloperApi.APIModelsJointTenant](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsJointTenant.md)
+ - [MydepositsDeveloperApi.APIModelsLandlord](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsLandlord.md)
+ - [MydepositsDeveloperApi.APIModelsLandlordMember](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsLandlordMember.md)
+ - [MydepositsDeveloperApi.APIModelsPaymentDetail](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsPaymentDetail.md)
+ - [MydepositsDeveloperApi.APIModelsProperty](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsProperty.md)
+ - [MydepositsDeveloperApi.APIModelsSubscribe](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsSubscribe.md)
+ - [MydepositsDeveloperApi.APIModelsTenancy](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsTenancy.md)
+ - [MydepositsDeveloperApi.APIModelsTenant](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsTenant.md)
+ - [MydepositsDeveloperApi.APIModelsToken](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsToken.md)
+ - [MydepositsDeveloperApi.APIModelsUnprotect](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsUnprotect.md)
+ - [MydepositsDeveloperApi.APIModelsUnprotectAccept](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsUnprotectAccept.md)
+ - [MydepositsDeveloperApi.APIModelsUnprotectionDeductions](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIModelsUnprotectionDeductions.md)
+ - [MydepositsDeveloperApi.APIResponsesBatch](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesBatch.md)
+ - [MydepositsDeveloperApi.APIResponsesBatchAddTenancy](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesBatchAddTenancy.md)
+ - [MydepositsDeveloperApi.APIResponsesBatchCheckout](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesBatchCheckout.md)
+ - [MydepositsDeveloperApi.APIResponsesBatchDetails](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesBatchDetails.md)
+ - [MydepositsDeveloperApi.APIResponsesBatchList](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesBatchList.md)
+ - [MydepositsDeveloperApi.APIResponsesBatchTenancy](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesBatchTenancy.md)
+ - [MydepositsDeveloperApi.APIResponsesBranch](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesBranch.md)
+ - [MydepositsDeveloperApi.APIResponsesBranchDetails](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesBranchDetails.md)
+ - [MydepositsDeveloperApi.APIResponsesBranchList](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesBranchList.md)
+ - [MydepositsDeveloperApi.APIResponsesCheckout](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesCheckout.md)
+ - [MydepositsDeveloperApi.APIResponsesConvertSPT](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesConvertSPT.md)
+ - [MydepositsDeveloperApi.APIResponsesDefaultPayment](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesDefaultPayment.md)
+ - [MydepositsDeveloperApi.APIResponsesErrorList](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesErrorList.md)
+ - [MydepositsDeveloperApi.APIResponsesErrors](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesErrors.md)
+ - [MydepositsDeveloperApi.APIResponsesInterestedPartyDetails](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesInterestedPartyDetails.md)
+ - [MydepositsDeveloperApi.APIResponsesJointTenant](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesJointTenant.md)
+ - [MydepositsDeveloperApi.APIResponsesLandlord](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesLandlord.md)
+ - [MydepositsDeveloperApi.APIResponsesLandlordDetails](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesLandlordDetails.md)
+ - [MydepositsDeveloperApi.APIResponsesLandlordMember](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesLandlordMember.md)
+ - [MydepositsDeveloperApi.APIResponsesLeadTenant](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesLeadTenant.md)
+ - [MydepositsDeveloperApi.APIResponsesOTP](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesOTP.md)
+ - [MydepositsDeveloperApi.APIResponsesPaymentDetail](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesPaymentDetail.md)
+ - [MydepositsDeveloperApi.APIResponsesPaymentDetails](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesPaymentDetails.md)
+ - [MydepositsDeveloperApi.APIResponsesPaymentDetailsList](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesPaymentDetailsList.md)
+ - [MydepositsDeveloperApi.APIResponsesProperty](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesProperty.md)
+ - [MydepositsDeveloperApi.APIResponsesPropertyDetails](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesPropertyDetails.md)
+ - [MydepositsDeveloperApi.APIResponsesProtection](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesProtection.md)
+ - [MydepositsDeveloperApi.APIResponsesProtectionList](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesProtectionList.md)
+ - [MydepositsDeveloperApi.APIResponsesSchemeRules](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesSchemeRules.md)
+ - [MydepositsDeveloperApi.APIResponsesTenancy](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesTenancy.md)
+ - [MydepositsDeveloperApi.APIResponsesTenancyDetails](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesTenancyDetails.md)
+ - [MydepositsDeveloperApi.APIResponsesToken](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesToken.md)
+ - [MydepositsDeveloperApi.APIResponsesUnprotect](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/APIResponsesUnprotect.md)
+ - [MydepositsDeveloperApi.Country](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/Country.md)
+ - [MydepositsDeveloperApi.DeductionReasons](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/DeductionReasons.md)
+ - [MydepositsDeveloperApi.InlineResponse200](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/InlineResponse200.md)
+ - [MydepositsDeveloperApi.LocalAuthorityRegion](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/LocalAuthorityRegion.md)
+ - [MydepositsDeveloperApi.PropertyType](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/PropertyType.md)
+ - [MydepositsDeveloperApi.TenancyStatus](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/TenancyStatus.md)
+ - [MydepositsDeveloperApi.TenancyType](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/TenancyType.md)
+ - [MydepositsDeveloperApi.Title](https://github.com/sudhakar-logicshore/mydeposits_developer_api/blob/master/docs/Title.md)
 
 
 ## Documentation for Authorization

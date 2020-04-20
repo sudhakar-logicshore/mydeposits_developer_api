@@ -25,6 +25,8 @@ var _APIResponsesBatchList = _interopRequireDefault(require("../model/APIRespons
 
 var _APIResponsesErrorList = _interopRequireDefault(require("../model/APIResponsesErrorList"));
 
+var _AuthenticationServicesApi = _interopRequireDefault(require("./AuthenticationServicesApi"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
